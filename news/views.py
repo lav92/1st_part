@@ -28,11 +28,10 @@ def view_news(request, news_id):
 
 
 def add_news(request):
-    global form
     if request.method == 'POST':
         form = NewsForm(request.POST)
         if form.is_valid():
-            News.objects.create(**form.cleaned_data)
+            form.save()
             return redirect('home')
     else:
         form = NewsForm()
