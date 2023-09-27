@@ -1,0 +1,6 @@
+News.objects.all() - получение всех записей из таблицы
+News.objects.order_by('-created_at') - сортировка по столбцу
+News.objects.all().reverse() - получение всех записей из бд в ОБРАТНОМ порядке
+News.objects.get(pk=1) - получение одной записи по стобцу(ид на 1)
+News.objects.filter(pk__gt=5) - получение новостей где айди > 5 (pk__gt=5: pk - field name, gt - name filter lookup
+( смотри документацию  https://docs.djangoproject.com/en/4.2/ref/models/querysets/))
